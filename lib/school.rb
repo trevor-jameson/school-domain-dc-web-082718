@@ -21,11 +21,11 @@ class School
     @roster[grade]
   end
 
-  # Have not been  able to pass #sort test yet
   def sort
-    @roster.collect do |grade, students|
-      students.sort {|x, y| x[0] <=> y[0]}
+    num_sorted_roster = @roster.sort.to_h
+    num_sorted_roster.each do |grade, student_arr|
+      student_arr.sort!
     end
-    # @roster.to_h
+    num_sorted_roster
   end
 end
